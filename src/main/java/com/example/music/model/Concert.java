@@ -19,7 +19,7 @@ public class Concert {
     private String name;
 
     @Column
-    private LocalDate localDate;
+    private boolean soldOut;
 
     @Column
     private int capacity;
@@ -34,15 +34,14 @@ public class Concert {
     }
 
     // arg constructor
-    public Concert(String name, LocalDate localDate, int capacity) {
+    public Concert(String name, boolean soldOut, int capacity) {
+        this.id = null;
         this.name = name;
-        this.localDate = localDate;
+        this.soldOut = soldOut;
         this.capacity = capacity;
     }
 
     // getters + setters
-
-
     public Long getId() {
         return id;
     }
@@ -59,12 +58,12 @@ public class Concert {
         this.name = name;
     }
 
-    public LocalDate getLocalDate() {
-        return localDate;
+    public boolean isSoldOut() {
+        return soldOut;
     }
 
-    public void setLocalDate(LocalDate localDate) {
-        this.localDate = localDate;
+    public void setSoldOut(boolean soldOut) {
+        this.soldOut = soldOut;
     }
 
     public int getCapacity() {

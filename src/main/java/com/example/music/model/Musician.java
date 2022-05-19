@@ -15,7 +15,7 @@ public class Musician {
     private String name;
 
     @Column
-    private int number;
+    private int contactReference;
 
     @Column
     private String instrument;
@@ -32,9 +32,10 @@ public class Musician {
     }
 
     // arg constructor
-    public Musician (String name, int number, String instrument, int grade) {
+    public Musician (String name, int contactReference, String instrument, int grade) {
+        this.id = null;
         this.name = name;
-        this.number = number;
+        this.contactReference = contactReference;
         this.instrument = instrument;
         this.grade = grade;
     }
@@ -57,11 +58,11 @@ public class Musician {
     }
 
     public int getNumber() {
-        return number;
+        return contactReference;
     }
 
     public void setNumber(int number) {
-        this.number = number;
+        this.contactReference = number;
     }
 
     public String getInstrument() {
