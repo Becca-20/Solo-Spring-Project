@@ -23,6 +23,10 @@ public class Musician {
     @Column
     private int grade;
 
+    @ManyToOne
+    @JoinColumn(name = "concert_id", nullable = false)
+    private Concert concert;
+
     // no arg constructor
     public Musician() {
     }
@@ -34,7 +38,7 @@ public class Musician {
         this.instrument = instrument;
         this.grade = grade;
     }
-    
+
     // getters + setters
     public Long getId() {
         return id;
